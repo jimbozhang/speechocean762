@@ -1,4 +1,4 @@
-# MI-1: An non-native English corpus for pronunciation scoring task
+# MI-1: A non-native English corpus for pronunciation scoring task
 
 
 ## Introduction
