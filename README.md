@@ -72,7 +72,7 @@ The following tree shows the file structure of this corpus:
 ```
 ├── scores.json
 ├── scores-detail.json
-├── dev
+├── train
 │   ├── spk2age
 │   ├── spk2gender
 │   ├── spk2utt
@@ -103,7 +103,7 @@ The following tree shows the file structure of this corpus:
         ├── ...
 ```
 
-There are two datasets: `dev` and `test`, and both are in Kaldi's data directory style.
+There are two datasets: `train` and `test`, and both are in Kaldi's data directory style.
 
 The scores are stored in `scores.json`. Here is an example:
 
