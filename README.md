@@ -2,30 +2,25 @@
 
 
 ## Introduction
-Pronunciation scoring is an essensial technology in computer-assisted language learning (CALL) systems.
-For a typical pronunciation scoring task, the prounciation quality scores might be given at phoneme-level, word-level and sentence-level.
-However, no scoring metric was widely accepted, and there is not any public dataset for this task.
-Researches use their own private datasets in their papers.
+Pronunciation scoring is a crucial technology in computer-assisted language learning (CALL) systems. The pronunciation quality scores might be given at phoneme-level, word-level, and sentence-level for a typical pronunciation scoring task.
+However, there is no public dataset for this task. Researchers use their private datasets in their papers.
 
 This corpus aims to provide a free public dataset for the pronunciation scoring task.
 
-This corpus consists 5000 English sentences.
-All the speakers are non-native and their mother tongue is Mandarin.
-Half of the speakers are Children and the others are adults.
-The information of age and gender are provided.
+This corpus consists of 5000 English sentences. All the speakers are non-native, and their mother tongue is Mandarin. Half of the speakers are Children, and the others are adults. The information of age and gender are provided.
 
-The scores was made by five experts. To avoid subjectively bias, each experts scores independently under the same metric.
+Five experts made the scores. To avoid subjective bias, each expert scores independently under the same metric.
 
 
 ## The scoring metric
-The experts score at three levels: phoneme-level, word-level and sentence-level.
+The experts score at three levels: phoneme-level, word-level, and sentence-level.
 
 ### Phoneme level
 Score the pronunciation goodness of each phoneme within the words.
 
 Score range: 0-2
 * 2: pronunciation is correct
-* 1: pronunciation is correct but has heavy accent
+* 1: pronunciation is right but has a heavy accent
 * 0: pronunciation is incorrect or missed
 
 ### Word level
@@ -33,28 +28,28 @@ Score the accuracy and stress of each word's pronunciation.
 
 #### Accuracy
 Score range: 0 - 10
-* 10: xxxx
-* 7-9: xxxx
-* 4-6: xxxx
-* 2-3: xxxx
-* 1: xxxx
+* 10: The pronunciation of the word is perfect
+* 7-9: Most phones in this word are pronounced correctly but have accents
+* 4-6: Less than 30% of phones in this word are wrongly pronounced
+* 2-3: More than 30% of phones in this word are wrongly pronounced. In another case, the word is mispronounced as some other word. For example, the student mispronounced the word "bag" as "bike"
+* 1: The pronunciation is hard to distinguish
 * 0: no voice
 
 #### Stress
-Score range: 5 - 10
-* 10: stress correct or this is a mono-syllable word
-* 5: stress wrong
+Score range: {5, 10}
+* 10: The stress is correct, or this is a mono-syllable word
+* 5: The stress is wrong
 
 ### Sentence level
 Score the accuracy, fluency, completeness and prosodic at the sentence level.
 
 #### Accuracy
 Score range: 0 - 10
-* 9-10: xxxx
-* 7-8: xxxx
-* 5-6: xxxx
-* 3-4: xxxx
-* 0-2: xxxx
+9-10: The overall pronunciation of the sentence is excellent, with accurate phonology and no obvious pronunciation mistakes
+7-8: The overall pronunciation of the sentence is good, with a few pronunciation mistakes
+5-6: The overall pronunciation of the sentence is understandable, with many pronunciation mistakes and accent, but it does not affect the understanding of basic meanings
+3-4: Poor, clumsy and rigid pronunciation of the sentence as a whole, with serious pronunciation mistakes
+0-2: Extremely poor pronunciation and only one or two words are recognizable
 
 #### Completeness
 Score range: 0.0 - 1.0
@@ -62,10 +57,18 @@ The percentage of the words with good pronunciation.
 
 #### Fluency
 Score range: 0 - 10
-* 8-10: xxxx
-* 6-7: xxxx
-* 4-5: xxxx
-* 0-3: xxxx
+* 8-10: Fluent without noticeable pauses or stammering
+* 6-7: Fluent in general, with a few pauses, repetition, and stammering
+* 4-5: the speech is a little influent, with many pauses, repetition, and stammering
+* 0-3: intermittent, very influent speech, with lots of pauses, repetition, and stammering
+
+#### Prosodic
+Score range: 0 - 10
+* 9-10: Correct intonation at a stable speaking speed, speak with cadence, and can speak like a native
+* 7-8:  Nearly correct intonation at a stable speaking speed, nearly smooth and coherent, but with little stammering and few pauses
+* 5-6: Unstable speech speed, many stammering and pauses with a poor sense of rhythm
+* 3-4: Unstable speech speed, speak too fast or too slow, without the sense of rhythm
+* 0-2: Poor intonation and lots of stammering and pauses, unable to read a complete sentence
 
 ## Data structure
 The following tree shows the file structure of this corpus:
@@ -105,9 +108,10 @@ The following tree shows the file structure of this corpus:
 
 There are two datasets: `train` and `test`, and both are in Kaldi's data directory style.
 
+
 The scores are stored in `scores.json`. Here is an example:
 
-```json
+```
 {
     "000010011": {                                     # utt-id
         "text": "WE CALL IT BEAR",                     # transcript text
@@ -155,12 +159,12 @@ The scores are stored in `scores.json`. Here is an example:
 }
 ```
 
-The file `scores.json` are processed from `scores-detail.json`.
-The two JSON files are almostly same, but `scores-detail.json` has the original scores of the five experts,
-while the scores of `scores.json` was the average or median scores.
+
+The file `scores.json` is processed from `scores-detail.json`.
+The two JSON files are almost the same, but `scores-detail.json` has the five experts' original scores, while the scores of scores.json were the average or median scores.
 
 An example item in `scores-detail.json`:
-```json
+```
 {
     "000010011": {
 
