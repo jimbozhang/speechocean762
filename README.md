@@ -108,6 +108,7 @@ The following tree shows the file structure of this corpus:
 
 There are two datasets: `train` and `test`, and both are in Kaldi's data directory style.
 
+
 The scores are stored in `scores.json`. Here is an example:
 
 ```
@@ -157,6 +158,7 @@ The scores are stored in `scores.json`. Here is an example:
     ...
 }
 ```
+
 
 The file `scores.json` is processed from `scores-detail.json`.
 The two JSON files are almost the same, but `scores-detail.json` has the five experts' original scores, while the scores of scores.json were the average or median scores.
