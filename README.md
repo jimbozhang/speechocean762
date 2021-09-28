@@ -243,3 +243,15 @@ In `scores-detail.json`, the phoneme-level scores are notated in the following c
 
 For example, "B (EH) R" means the score of EH is 0 while the scores of B and R are both 2,
 "B EH [L] R" mean there is an unexpected phone "L" and the other phones are scored 2.
+
+## Citation
+Please cite our paper if you find this work useful:
+
+```bibtext
+@inproceedings{speechocean762,
+  title={speechocean762: An Open-Source Non-native English Speech Corpus For Pronunciation Assessment},
+  booktitle={Proc. Interspeech 2021},
+  year=2021,
+  author={Junbo Zhang, Zhiwen Zhang, Yongqing Wang, Zhiyong Yan, Qiong Song, Yukai Huang, Ke Li, Daniel Povey, Yujun Wang}
+}
+```
