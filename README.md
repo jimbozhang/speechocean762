@@ -76,34 +76,34 @@ The following tree shows the file structure of this corpus:
 ├── scores.json
 ├── scores-detail.json
 ├── train
-│   ├── spk2age
-│   ├── spk2gender
-│   ├── spk2utt
-│   ├── text
-│   ├── utt2spk
-│   └── wav.scp
+│             ├── spk2age
+│             ├── spk2gender
+│             ├── spk2utt
+│             ├── text
+│             ├── utt2spk
+│             └── wav.scp
 ├── test
-│   ├── spk2age
-│   ├── spk2gender
-│   ├── spk2utt
-│   ├── text
-│   ├── utt2spk
-│   └── wav.scp
+│             ├── spk2age
+│             ├── spk2gender
+│             ├── spk2utt
+│             ├── text
+│             ├── utt2spk
+│             └── wav.scp
 └── WAVE
     ├── SPEAKER0001
-    │   ├── 000010011.WAV
-    │   ├── 000010035.WAV
-    │   ├── ...
+    │             ├── 000010011.WAV
+    │             ├── 000010035.WAV
+    │             ├── ...
     ├── SPEAKER0003
-    │   ├── 000030012.WAV
-    │   ├── 000030024.WAV
-    │   ├── 000030040.WAV
-    │   ├── ...
+    │             ├── 000030012.WAV
+    │             ├── 000030024.WAV
+    │             ├── 000030040.WAV
+    │             ├── ...
     └── SPEAKER0005
         ├── 000050003.WAV
         ├── 000050010.WAV
         ├── 000050024.WAV
-        ├── ...
+                  ├── ...
 ```
 
 There are two datasets: `train` and `test`, and both are in Kaldi's data directory style.
@@ -159,6 +159,28 @@ The scores are stored in `scores.json`. Here is an example:
 }
 ```
 
+For the phones with an accuracy score lower than 0.5, an extra "mispronunciations" block indicates which phoneme the current phone was actually pronounced.
+An example:
+
+```
+{
+    "text": "LISA",
+    "accuracy": 5,
+    "phones": ["L", "IY1", "S", "AH0"],
+    "phones-accuracy": [0.4, 2, 2, 1.2],
+    "mispronunciations": [
+        {
+            "canonical-phone": "L",
+            "index": 0,
+            "pronounced-phone": "D"
+        }
+    ],
+    "stress": 10,
+    "total": 6
+}
+```
+
+```
 
 The file `scores.json` is processed from `scores-detail.json`.
 The two JSON files are almost the same, but `scores-detail.json` has the five experts' original scores, while the scores of scores.json were the average or median scores.
