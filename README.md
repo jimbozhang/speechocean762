@@ -180,8 +180,6 @@ An example:
 }
 ```
 
-```
-
 The file `scores.json` is processed from `scores-detail.json`.
 The two JSON files are almost the same, but `scores-detail.json` has the five experts' original scores, while the scores of scores.json were the average or median scores.
 
