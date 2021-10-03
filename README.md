@@ -76,34 +76,35 @@ The following tree shows the file structure of this corpus:
 ├── scores.json
 ├── scores-detail.json
 ├── train
-│             ├── spk2age
-│             ├── spk2gender
-│             ├── spk2utt
-│             ├── text
-│             ├── utt2spk
-│             └── wav.scp
+│   ├── spk2age
+│   ├── spk2gender
+│   ├── spk2utt
+│   ├── text
+│   ├── utt2spk
+│   └── wav.scp
 ├── test
-│             ├── spk2age
-│             ├── spk2gender
-│             ├── spk2utt
-│             ├── text
-│             ├── utt2spk
-│             └── wav.scp
+│   ├── spk2age
+│   ├── spk2gender
+│   ├── spk2utt
+│   ├── text
+│   ├── utt2spk
+│   └── wav.scp
 └── WAVE
     ├── SPEAKER0001
-    │             ├── 000010011.WAV
-    │             ├── 000010035.WAV
-    │             ├── ...
+    │   ├── 000010011.WAV
+    │   ├── 000010035.WAV
+    │   ├── ...
+    │   └── 000010173.WAV
     ├── SPEAKER0003
-    │             ├── 000030012.WAV
-    │             ├── 000030024.WAV
-    │             ├── 000030040.WAV
-    │             ├── ...
+    │   ├── 000030012.WAV
+    │   ├── 000030024.WAV
+    │   ├── ...
+    │   └── 000030175.WAV
     └── SPEAKER0005
         ├── 000050003.WAV
         ├── 000050010.WAV
-        ├── 000050024.WAV
-                  ├── ...
+        ├── ...
+        └── 000050175.WAV
 ```
 
 There are two datasets: `train` and `test`, and both are in Kaldi's data directory style.
