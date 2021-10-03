@@ -45,11 +45,11 @@ Score the accuracy, fluency, completeness and prosodic at the sentence level.
 
 #### Accuracy
 Score range: 0 - 10
-9-10: The overall pronunciation of the sentence is excellent, with accurate phonology and no obvious pronunciation mistakes
-7-8: The overall pronunciation of the sentence is good, with a few pronunciation mistakes
-5-6: The overall pronunciation of the sentence is understandable, with many pronunciation mistakes and accent, but it does not affect the understanding of basic meanings
-3-4: Poor, clumsy and rigid pronunciation of the sentence as a whole, with serious pronunciation mistakes
-0-2: Extremely poor pronunciation and only one or two words are recognizable
+* 9-10: The overall pronunciation of the sentence is excellent, with accurate phonology and no obvious pronunciation mistakes
+* 7-8: The overall pronunciation of the sentence is good, with a few pronunciation mistakes
+* 5-6: The overall pronunciation of the sentence is understandable, with many pronunciation mistakes and accent, but it does not affect the understanding of basic meanings
+* 3-4: Poor, clumsy and rigid pronunciation of the sentence as a whole, with serious pronunciation mistakes
+* 0-2: Extremely poor pronunciation and only one or two words are recognizable
 
 #### Completeness
 Score range: 0.0 - 1.0
