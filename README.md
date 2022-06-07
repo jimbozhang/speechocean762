@@ -3,9 +3,12 @@
 
 ## Introduction
 Pronunciation scoring is a crucial technology in computer-assisted language learning (CALL) systems. The pronunciation quality scores might be given at phoneme-level, word-level, and sentence-level for a typical pronunciation scoring task.
-However, there is no public dataset for this task. Researchers use their private datasets in their papers.
 
 This corpus aims to provide a free public dataset for the pronunciation scoring task.
+Key features:
+* It is available for free download for both commercial and non-commercial purposes.
+* The speaker variety encompasses young children and adults.
+* The manual annotations are in multiple aspects at sentence-level, word-level and phoneme-level.
 
 This corpus consists of 5000 English sentences. All the speakers are non-native, and their mother tongue is Mandarin. Half of the speakers are Children, and the others are adults. The information of age and gender are provided.
 
