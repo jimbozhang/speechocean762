@@ -1,5 +1,6 @@
 # speechocean762: A non-native English corpus for pronunciation scoring task
 
+🤗 speechocean762 is now also accessible on [Hugging Face](https://huggingface.co/datasets/mispeech/speechocean762)!
 
 ## Introduction
 Pronunciation scoring is a crucial technology in computer-assisted language learning (CALL) systems. The pronunciation quality scores might be given at phoneme-level, word-level, and sentence-level for a typical pronunciation scoring task.
