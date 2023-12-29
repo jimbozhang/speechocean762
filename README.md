@@ -252,11 +252,11 @@ For example, "B (EH) R" means the score of EH is 0 while the scores of B and R a
 ## Citation
 Please cite our paper if you find this work useful:
 
-```bibtext
-@inproceedings{speechocean762,
+```bibtex
+@inproceedings{zhang2021speechocean762,
   title={speechocean762: An Open-Source Non-native English Speech Corpus For Pronunciation Assessment},
+  author={Zhang, Junbo and Zhang, Zhiwen and Wang, Yongqing and Yan, Zhiyong and Song, Qiong and Huang, Yukai and Li, Ke and Povey, Daniel and Wang, Yujun},
   booktitle={Proc. Interspeech 2021},
-  year=2021,
-  author={Junbo Zhang, Zhiwen Zhang, Yongqing Wang, Zhiyong Yan, Qiong Song, Yukai Huang, Ke Li, Daniel Povey, Yujun Wang}
+  year={2021}
 }
 ```
