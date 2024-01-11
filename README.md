@@ -1,6 +1,31 @@
 # speechocean762: A non-native English corpus for pronunciation scoring task
 
-🤗 speechocean762 is now also accessible on [Hugging Face](https://huggingface.co/datasets/mispeech/speechocean762)!
+## 🤗 Datasets example
+speechocean762 is now also accessible on [Hugging Face](https://huggingface.co/datasets/mispeech/speechocean762)!
+
+```python
+>>> from datasets import load_dataset
+
+>>> test_set = load_dataset("mispeech/speechocean762", split="test")
+
+>>> len(test_set)
+2500
+
+>>> next(iter(test_set))
+{'file': 'WAVE/SPEAKER0003/000030012.WAV',
+ 'audio': {'path': 'WAVE/SPEAKER0003/000030012.WAV',
+  'array': array([-0.00119019, -0.00500488, -0.00283813, ...,  0.00274658,
+          0.        ,  0.00125122]),
+  'sampling_rate': 16000},
+ 'text': 'MARK IS GOING TO SEE ELEPHANT',
+ 'speaker': '0003',
+ 'gender': 'm',
+ 'age': 6,
+ 'accuracy': 9,
+ 'fluency': 9,
+ 'prosodic': 9,
+ 'total': 9}
+```
 
 ## Introduction
 Pronunciation scoring is a crucial technology in computer-assisted language learning (CALL) systems. The pronunciation quality scores might be given at phoneme-level, word-level, and sentence-level for a typical pronunciation scoring task.
