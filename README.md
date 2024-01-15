@@ -13,10 +13,10 @@ speechocean762 is now also accessible on [Hugging Face](https://huggingface.co/d
 
 >>> next(iter(test_set))
 {'file': 'WAVE/SPEAKER0003/000030012.WAV',
- 'audio': {'path': 'WAVE/SPEAKER0003/000030012.WAV',
-  'array': array([-0.00119019, -0.00500488, -0.00283813, ...,  0.00274658,
-          0.        ,  0.00125122]),
-  'sampling_rate': 16000},
+ 'audio': {
+   'path': 'WAVE/SPEAKER0003/000030012.WAV',
+   'array': array([-0.00119019, -0.00500488, -0.00283813, ...,  0.00274658, 0.        ,  0.00125122]),
+   'sampling_rate': 16000},
  'text': 'MARK IS GOING TO SEE ELEPHANT',
  'speaker': '0003',
  'gender': 'm',
@@ -24,7 +24,24 @@ speechocean762 is now also accessible on [Hugging Face](https://huggingface.co/d
  'accuracy': 9,
  'fluency': 9,
  'prosodic': 9,
- 'total': 9}
+ 'total': 9,
+ 'words': {'text': ['MARK', 'IS', 'GOING', 'TO', 'SEE', 'ELEPHANT'],
+  'accuracy': [10, 10, 10, 10, 10, 10],
+  'stress': [10, 10, 10, 10, 10, 10],
+  'total': [10, 10, 10, 10, 10, 10],
+  'phones': [['M', 'AA0', 'R', 'K'],
+    ['IH0', 'Z'],
+    ['G', 'OW0', 'IH0', 'NG'],
+    ['T', 'UW0'],
+    ['S', 'IY0'],
+    ['EH1', 'L', 'IH0', 'F', 'AH0', 'N', 'T']],
+  'phones-accuracy': [[2.0, 2.0, 1.8, 2.0],
+    [2.0, 1.8],
+    [2.0, 2.0, 2.0, 2.0],
+    [2.0, 2.0],
+    [2.0, 2.0],
+    [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]],
+  'mispronunciations': ['[]', '[]', '[]', '[]', '[]', '[]']}}
 ```
 
 ## Introduction
