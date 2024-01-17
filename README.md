@@ -6,42 +6,67 @@ speechocean762 is now also accessible on [Hugging Face](https://huggingface.co/d
 ```python
 >>> from datasets import load_dataset
 
->>> test_set = load_dataset("mispeech/speechocean762", split="test")
+>>> testset = load_dataset("mispeech/speechocean762", split="test")
 
->>> len(test_set)
+>>> len(testset)
 2500
 
->>> next(iter(test_set))
-{'file': 'WAVE/SPEAKER0003/000030012.WAV',
- 'audio': {
-   'path': 'WAVE/SPEAKER0003/000030012.WAV',
-   'array': array([-0.00119019, -0.00500488, -0.00283813, ...,  0.00274658, 0.        ,  0.00125122]),
-   'sampling_rate': 16000},
+>>> testset[0]
+{'accuracy': 9,
+ 'completeness': 10.0,
+ 'fluency': 9,
+ 'prosodic': 9,
  'text': 'MARK IS GOING TO SEE ELEPHANT',
+ 'total': 9,
+ 'words': [{'accuracy': 10,
+   'phones': ['M', 'AA0', 'R', 'K'],
+   'phones-accuracy': [2.0, 2.0, 1.8, 2.0],
+   'stress': 10,
+   'text': 'MARK',
+   'total': 10,
+   'mispronunciations': []},
+  {'accuracy': 10,
+   'phones': ['IH0', 'Z'],
+   'phones-accuracy': [2.0, 1.8],
+   'stress': 10,
+   'text': 'IS',
+   'total': 10,
+   'mispronunciations': []},
+  {'accuracy': 10,
+   'phones': ['G', 'OW0', 'IH0', 'NG'],
+   'phones-accuracy': [2.0, 2.0, 2.0, 2.0],
+   'stress': 10,
+   'text': 'GOING',
+   'total': 10,
+   'mispronunciations': []},
+  {'accuracy': 10,
+   'phones': ['T', 'UW0'],
+   'phones-accuracy': [2.0, 2.0],
+   'stress': 10,
+   'text': 'TO',
+   'total': 10,
+   'mispronunciations': []},
+  {'accuracy': 10,
+   'phones': ['S', 'IY0'],
+   'phones-accuracy': [2.0, 2.0],
+   'stress': 10,
+   'text': 'SEE',
+   'total': 10,
+   'mispronunciations': []},
+  {'accuracy': 10,
+   'phones': ['EH1', 'L', 'IH0', 'F', 'AH0', 'N', 'T'],
+   'phones-accuracy': [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0],
+   'stress': 10,
+   'text': 'ELEPHANT',
+   'total': 10,
+   'mispronunciations': []}],
  'speaker': '0003',
  'gender': 'm',
  'age': 6,
- 'accuracy': 9,
- 'fluency': 9,
- 'prosodic': 9,
- 'total': 9,
- 'words': {'text': ['MARK', 'IS', 'GOING', 'TO', 'SEE', 'ELEPHANT'],
-  'accuracy': [10, 10, 10, 10, 10, 10],
-  'stress': [10, 10, 10, 10, 10, 10],
-  'total': [10, 10, 10, 10, 10, 10],
-  'phones': [['M', 'AA0', 'R', 'K'],
-    ['IH0', 'Z'],
-    ['G', 'OW0', 'IH0', 'NG'],
-    ['T', 'UW0'],
-    ['S', 'IY0'],
-    ['EH1', 'L', 'IH0', 'F', 'AH0', 'N', 'T']],
-  'phones-accuracy': [[2.0, 2.0, 1.8, 2.0],
-    [2.0, 1.8],
-    [2.0, 2.0, 2.0, 2.0],
-    [2.0, 2.0],
-    [2.0, 2.0],
-    [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]],
-  'mispronunciations': ['[]', '[]', '[]', '[]', '[]', '[]']}}
+ 'audio': {'path': '000030012.wav',
+  'array': array([-0.00119019, -0.00500488, -0.00283813, ...,  0.00274658,
+          0.        ,  0.00125122]),
+  'sampling_rate': 16000}}
 ```
 
 ## Introduction
