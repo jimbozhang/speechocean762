@@ -166,7 +166,7 @@ Score range: 0 - 10
 
 ## Data structure
 
-The following tree shows the file structure of this corpus:
+If you don't want to use the [Datasets](https://huggingface.co/datasets/mispeech/speechocean762) by Hugging Face, you can clone this corpus and use it in your own way. The following tree shows the file structure of this corpus:
 
 ```
 ├── scores.json
@@ -204,6 +204,8 @@ The following tree shows the file structure of this corpus:
 ```
 
 There are two datasets: `train` and `test`, and both are in Kaldi's data directory style.
+
+### Metadata
 
 The scores are stored in `scores.json`. Here is an example:
 
@@ -252,27 +254,6 @@ The scores are stored in `scores.json`. Here is an example:
         ]
     },
     ...
-}
-```
-
-For the phones with an accuracy score lower than 0.5, an extra "mispronunciations" block indicates which phoneme the current phone was actually pronounced.
-An example:
-
-```
-{
-    "text": "LISA",
-    "accuracy": 5,
-    "phones": ["L", "IY1", "S", "AH0"],
-    "phones-accuracy": [0.4, 2, 2, 1.2],
-    "mispronunciations": [
-        {
-            "canonical-phone": "L",
-            "index": 0,
-            "pronounced-phone": "D"
-        }
-    ],
-    "stress": 10,
-    "total": 6
 }
 ```
 
@@ -339,6 +320,58 @@ In `scores-detail.json`, the phoneme-level scores are notated in the following c
 
 For example, "B (EH) R" means the score of EH is 0 while the scores of B and R are both 2,
 "B EH [L] R" mean there is an unexpected phone "L" and the other phones are scored 2.
+
+### The "mispronunciations" block
+
+For the phones with an accuracy score lower than 0.5, an extra "mispronunciations" block indicates which phoneme the current phone was actually pronounced in `scores.json`.
+
+An example, where the phone "L" is pronounced as "D":
+
+```
+{
+    "text": "LISA",
+    "accuracy": 5,
+    "phones": ["L", "IY1", "S", "AH0"],
+    "phones-accuracy": [0.4, 2, 2, 1.2],
+    "mispronunciations": [
+        {
+            "canonical-phone": "L",
+            "index": 0,
+            "pronounced-phone": "D"
+        }
+    ],
+    "stress": 10,
+    "total": 6
+}
+```
+
+Here is another example, where the "R*" means the prounciation is mostly like "R" but not exactly "R":
+
+```
+{
+    "mispronunciations": [
+        {
+            "canonical-phone": "R",
+            "index": 1,
+            "pronounced-phone": "R*"
+        }
+    ],
+},
+```
+
+If the phone can not be even recognized, the `pronounced-phone` is marked as "<unk>":
+
+```
+{
+    "mispronunciations": [
+        {
+            "canonical-phone": "R",
+            "index": 1,
+            "pronounced-phone": "<unk>"
+        }
+    ],
+},
+```
 
 ## Citation
 
