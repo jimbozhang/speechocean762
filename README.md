@@ -3,7 +3,7 @@
 [![arxiv](https://img.shields.io/badge/arXiv-2104.01378-b31b1b)](https://arxiv.org/abs/2104.01378)
 [![huggingface](https://img.shields.io/badge/HuggingFace-Datasets-ffcc66)](https://huggingface.co/datasets/mispeech/speechocean762)
 [![kaldi](https://img.shields.io/badge/Baseline-Kaldi-8c6434)](https://github.com/kaldi-asr/kaldi/tree/master/egs/gop_speechocean762)
-[![kaldi](https://img.shields.io/badge/Benchmark-paperswithcode-1aa2a5)](https://github.com/kaldi-asr/kaldi/tree/master/egs/gop_speechocean762)
+[![kaldi](https://img.shields.io/badge/Benchmark-paperswithcode-1aa2a5)](https://paperswithcode.com/dataset/speechocean762)
 
 ## 🤗 Datasets example
 
