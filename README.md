@@ -359,7 +359,7 @@ Here is another example, where the "R*" means the prounciation is mostly like "R
 },
 ```
 
-If the phone can not be even recognized, the `pronounced-phone` is marked as "<unk>":
+If the phone can not be even recognized, the `pronounced-phone` is marked as "\<unk>":
 
 ```
 {
