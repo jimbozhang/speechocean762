@@ -1,11 +1,87 @@
 # speechocean762: A non-native English corpus for pronunciation scoring task
 
+[![arxiv](https://img.shields.io/badge/arXiv-2104.01378-b31b1b)](https://arxiv.org/abs/2104.01378)
+[![huggingface](https://img.shields.io/badge/HuggingFace-Datasets-ffcc66)](https://huggingface.co/datasets/mispeech/speechocean762)
+[![kaldi](https://img.shields.io/badge/Baseline-Kaldi-8c6434)](https://github.com/kaldi-asr/kaldi/tree/master/egs/gop_speechocean762)
+[![kaldi](https://img.shields.io/badge/Benchmark-paperswithcode-1aa2a5)](https://paperswithcode.com/dataset/speechocean762)
+
+## 🤗 Datasets example
+
+speechocean762 is now also accessible on [Hugging Face](https://huggingface.co/datasets/mispeech/speechocean762)!
+
+```python
+>>> from datasets import load_dataset
+
+>>> testset = load_dataset("mispeech/speechocean762", split="test")
+
+>>> len(testset)
+2500
+
+>>> testset[0]
+{'accuracy': 9,
+ 'completeness': 10.0,
+ 'fluency': 9,
+ 'prosodic': 9,
+ 'text': 'MARK IS GOING TO SEE ELEPHANT',
+ 'total': 9,
+ 'words': [{'accuracy': 10,
+   'phones': ['M', 'AA0', 'R', 'K'],
+   'phones-accuracy': [2.0, 2.0, 1.8, 2.0],
+   'stress': 10,
+   'text': 'MARK',
+   'total': 10,
+   'mispronunciations': []},
+  {'accuracy': 10,
+   'phones': ['IH0', 'Z'],
+   'phones-accuracy': [2.0, 1.8],
+   'stress': 10,
+   'text': 'IS',
+   'total': 10,
+   'mispronunciations': []},
+  {'accuracy': 10,
+   'phones': ['G', 'OW0', 'IH0', 'NG'],
+   'phones-accuracy': [2.0, 2.0, 2.0, 2.0],
+   'stress': 10,
+   'text': 'GOING',
+   'total': 10,
+   'mispronunciations': []},
+  {'accuracy': 10,
+   'phones': ['T', 'UW0'],
+   'phones-accuracy': [2.0, 2.0],
+   'stress': 10,
+   'text': 'TO',
+   'total': 10,
+   'mispronunciations': []},
+  {'accuracy': 10,
+   'phones': ['S', 'IY0'],
+   'phones-accuracy': [2.0, 2.0],
+   'stress': 10,
+   'text': 'SEE',
+   'total': 10,
+   'mispronunciations': []},
+  {'accuracy': 10,
+   'phones': ['EH1', 'L', 'IH0', 'F', 'AH0', 'N', 'T'],
+   'phones-accuracy': [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0],
+   'stress': 10,
+   'text': 'ELEPHANT',
+   'total': 10,
+   'mispronunciations': []}],
+ 'speaker': '0003',
+ 'gender': 'm',
+ 'age': 6,
+ 'audio': {'path': '000030012.wav',
+  'array': array([-0.00119019, -0.00500488, -0.00283813, ...,  0.00274658,
+          0.        ,  0.00125122]),
+  'sampling_rate': 16000}}
+```
 
 ## Introduction
+
 Pronunciation scoring is a crucial technology in computer-assisted language learning (CALL) systems. The pronunciation quality scores might be given at phoneme-level, word-level, and sentence-level for a typical pronunciation scoring task.
 
 This corpus aims to provide a free public dataset for the pronunciation scoring task.
 Key features:
+
 * It is available for free download for both commercial and non-commercial purposes.
 * The speaker variety encompasses young children and adults.
 * The manual annotations are in multiple aspects at sentence-level, word-level and phoneme-level.
@@ -14,23 +90,28 @@ This corpus consists of 5000 English sentences. All the speakers are non-native,
 
 Five experts made the scores. To avoid subjective bias, each expert scores independently under the same metric.
 
-
 ## The scoring metric
+
 The experts score at three levels: phoneme-level, word-level, and sentence-level.
 
 ### Phoneme level
+
 Score the pronunciation goodness of each phoneme within the words.
 
 Score range: 0-2
+
 * 2: pronunciation is correct
 * 1: pronunciation is right but has a heavy accent
 * 0: pronunciation is incorrect or missed
 
 ### Word level
+
 Score the accuracy and stress of each word's pronunciation.
 
 #### Accuracy
+
 Score range: 0 - 10
+
 * 10: The pronunciation of the word is perfect
 * 7-9: Most phones in this word are pronounced correctly but have accents
 * 4-6: Less than 30% of phones in this word are wrongly pronounced
@@ -39,15 +120,20 @@ Score range: 0 - 10
 * 0: no voice
 
 #### Stress
+
 Score range: {5, 10}
+
 * 10: The stress is correct, or this is a mono-syllable word
 * 5: The stress is wrong
 
 ### Sentence level
+
 Score the accuracy, fluency, completeness and prosodic at the sentence level.
 
 #### Accuracy
+
 Score range: 0 - 10
+
 * 9-10: The overall pronunciation of the sentence is excellent, with accurate phonology and no obvious pronunciation mistakes
 * 7-8: The overall pronunciation of the sentence is good, with a few pronunciation mistakes
 * 5-6: The overall pronunciation of the sentence is understandable, with many pronunciation mistakes and accent, but it does not affect the understanding of basic meanings
@@ -55,18 +141,23 @@ Score range: 0 - 10
 * 0-2: Extremely poor pronunciation and only one or two words are recognizable
 
 #### Completeness
+
 Score range: 0.0 - 1.0
 The percentage of the words with good pronunciation.
 
 #### Fluency
+
 Score range: 0 - 10
+
 * 8-10: Fluent without noticeable pauses or stammering
 * 6-7: Fluent in general, with a few pauses, repetition, and stammering
 * 4-5: the speech is a little influent, with many pauses, repetition, and stammering
 * 0-3: intermittent, very influent speech, with lots of pauses, repetition, and stammering
 
 #### Prosodic
+
 Score range: 0 - 10
+
 * 9-10: Correct intonation at a stable speaking speed, speak with cadence, and can speak like a native
 * 7-8:  Nearly correct intonation at a stable speaking speed, nearly smooth and coherent, but with little stammering and few pauses
 * 5-6: Unstable speech speed, many stammering and pauses with a poor sense of rhythm
@@ -74,7 +165,9 @@ Score range: 0 - 10
 * 0-2: Poor intonation and lots of stammering and pauses, unable to read a complete sentence
 
 ## Data structure
-The following tree shows the file structure of this corpus:
+
+If you don't want to use the [Datasets](https://huggingface.co/datasets/mispeech/speechocean762) by Hugging Face, you can clone this corpus and use it in your own way. The following tree shows the file structure of this corpus:
+
 ```
 ├── scores.json
 ├── scores-detail.json
@@ -112,6 +205,7 @@ The following tree shows the file structure of this corpus:
 
 There are two datasets: `train` and `test`, and both are in Kaldi's data directory style.
 
+### Metadata
 
 The scores are stored in `scores.json`. Here is an example:
 
@@ -163,31 +257,11 @@ The scores are stored in `scores.json`. Here is an example:
 }
 ```
 
-For the phones with an accuracy score lower than 0.5, an extra "mispronunciations" block indicates which phoneme the current phone was actually pronounced.
-An example:
-
-```
-{
-    "text": "LISA",
-    "accuracy": 5,
-    "phones": ["L", "IY1", "S", "AH0"],
-    "phones-accuracy": [0.4, 2, 2, 1.2],
-    "mispronunciations": [
-        {
-            "canonical-phone": "L",
-            "index": 0,
-            "pronounced-phone": "D"
-        }
-    ],
-    "stress": 10,
-    "total": 6
-}
-```
-
 The file `scores.json` is processed from `scores-detail.json`.
 The two JSON files are almost the same, but `scores-detail.json` has the five experts' original scores, while the scores of scores.json were the average or median scores.
 
 An example item in `scores-detail.json`:
+
 ```
 {
     "000010011": {
@@ -244,18 +318,70 @@ In `scores-detail.json`, the phoneme-level scores are notated in the following c
 * for score 0, use "()" symbol
 * for the inserted phone, use the "[]" symbol
 
-
 For example, "B (EH) R" means the score of EH is 0 while the scores of B and R are both 2,
 "B EH [L] R" mean there is an unexpected phone "L" and the other phones are scored 2.
 
+### The "mispronunciations" block
+
+For the phones with an accuracy score lower than 0.5, an extra "mispronunciations" block indicates which phoneme the current phone was actually pronounced in `scores.json`.
+
+An example, where the phone "L" is pronounced as "D":
+
+```
+{
+    "text": "LISA",
+    "accuracy": 5,
+    "phones": ["L", "IY1", "S", "AH0"],
+    "phones-accuracy": [0.4, 2, 2, 1.2],
+    "mispronunciations": [
+        {
+            "canonical-phone": "L",
+            "index": 0,
+            "pronounced-phone": "D"
+        }
+    ],
+    "stress": 10,
+    "total": 6
+}
+```
+
+Here is another example, where the "R*" means the prounciation is mostly like "R" but not exactly "R":
+
+```
+{
+    "mispronunciations": [
+        {
+            "canonical-phone": "R",
+            "index": 1,
+            "pronounced-phone": "R*"
+        }
+    ],
+},
+```
+
+If the phone can not be even recognized, the `pronounced-phone` is marked as "\<unk>":
+
+```
+{
+    "mispronunciations": [
+        {
+            "canonical-phone": "R",
+            "index": 1,
+            "pronounced-phone": "<unk>"
+        }
+    ],
+},
+```
+
 ## Citation
+
 Please cite our paper if you find this work useful:
 
-```bibtext
-@inproceedings{speechocean762,
+```bibtex
+@inproceedings{zhang2021speechocean762,
   title={speechocean762: An Open-Source Non-native English Speech Corpus For Pronunciation Assessment},
+  author={Zhang, Junbo and Zhang, Zhiwen and Wang, Yongqing and Yan, Zhiyong and Song, Qiong and Huang, Yukai and Li, Ke and Povey, Daniel and Wang, Yujun},
   booktitle={Proc. Interspeech 2021},
-  year=2021,
-  author={Junbo Zhang, Zhiwen Zhang, Yongqing Wang, Zhiyong Yan, Qiong Song, Yukai Huang, Ke Li, Daniel Povey, Yujun Wang}
+  year={2021}
 }
 ```

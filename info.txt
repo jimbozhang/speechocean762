@@ -1,8 +1,0 @@
-name: speechocean762
-summary: Pronunciation scoring dataset, labeled independently by five human experts
-category: speech
-license: Apache License v.2.0
-file: WAVE.tgz  The audio files of both the train-set and test-set
-file: train.tgz  Information for the train-set
-file: test.tgz  Information for the test-set
-file: resource.tgz  Transcripts and some miscellaneous files
