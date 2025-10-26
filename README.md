@@ -7,8 +7,6 @@
 
 ## 🤗 Datasets example
 
-speechocean762 is now also accessible on [Hugging Face](https://huggingface.co/datasets/mispeech/speechocean762)!
-
 ```python
 >>> from datasets import load_dataset
 
